@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        canvas {
+            border: 1px dotted darkgreen;
+        }
+    </style>
+</head>
+<body>
+<canvas width="600" height="400" id="myCanvas"></canvas>
+
+<script>
+    const myCanvas = document.querySelector('#myCanvas');
+    const ctx = myCanvas.getContext('2d');
+
+    const getRandomColor = ()=>{
+        let n = Math.floor(16777216*Math.random());
+        n = n.toString(16);
+        return '#'+ '000000'.slice(n.length) + n;
+    };
+
+    const drawCircle = (ctx, cx=0, cy=0, r=10, fillColor='red')=>{
+        ctx.arc(cx, cy, r, 0, Math.PI*2);
+        ctx.fillStyle = fillColor;
+        ctx.fill();
+    };
+
+    drawCircle(ctx, 300, 200, 30, 'orange');
+</script>
+
+
+
+</body>
+</html>

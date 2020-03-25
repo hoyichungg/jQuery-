@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="info" contenteditable="true"></div>
+
+<script>
+    let content = localStorage.getItem('div-content') || '可編輯的文字';
+
+    info.innerHTML = content;
+
+    const handler = (event)=>{
+        localStorage.setItem('div-content', event.target.innerHTML)
+        // console.log(event.type);
+        // console.log(event.target.innerHTML);
+    };
+    info.addEventListener('input', handler);
+    // info.addEventListener('blur', handler);
+
+
+</script>
+</body>
+</html>
